@@ -11,6 +11,7 @@
 		0F10324828FB46600041BDDE /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10324728FB46600041BDDE /* RedViewController.swift */; };
 		0F10324A28FB46CB0041BDDE /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10324928FB46CB0041BDDE /* BlueViewController.swift */; };
 		0F10324C28FB47080041BDDE /* YellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10324B28FB47080041BDDE /* YellowViewController.swift */; };
+		0F10324E28FB47FA0041BDDE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10324D28FB47FA0041BDDE /* AppCoordinator.swift */; };
 		0FC649CE28FB2916001D64A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC649CD28FB2916001D64A0 /* AppDelegate.swift */; };
 		0FC649D028FB2916001D64A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC649CF28FB2916001D64A0 /* SceneDelegate.swift */; };
 		0FC649D228FB2916001D64A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC649D128FB2916001D64A0 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		0F10324728FB46600041BDDE /* RedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = "<group>"; };
 		0F10324928FB46CB0041BDDE /* BlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = "<group>"; };
 		0F10324B28FB47080041BDDE /* YellowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowViewController.swift; sourceTree = "<group>"; };
+		0F10324D28FB47FA0041BDDE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0FC649CA28FB2916001D64A0 /* MyCoordinatorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCoordinatorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC649CD28FB2916001D64A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FC649CF28FB2916001D64A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		0F10324F28FB488D0041BDDE /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				0F10324D28FB47FA0041BDDE /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		0FC649C128FB2916001D64A0 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +100,7 @@
 		0FC649CC28FB2916001D64A0 /* MyCoordinatorApp */ = {
 			isa = PBXGroup;
 			children = (
+				0F10324F28FB488D0041BDDE /* Coordinators */,
 				0F10324328FB45900041BDDE /* Protocols */,
 				0F10324228FB430C0041BDDE /* App */,
 				0F10324128FB42E80041BDDE /* Views */,
@@ -174,6 +185,7 @@
 				0F10324628FB45BD0041BDDE /* Coordinator.swift in Sources */,
 				0FC649D228FB2916001D64A0 /* ViewController.swift in Sources */,
 				0F10324C28FB47080041BDDE /* YellowViewController.swift in Sources */,
+				0F10324E28FB47FA0041BDDE /* AppCoordinator.swift in Sources */,
 				0FC649CE28FB2916001D64A0 /* AppDelegate.swift in Sources */,
 				0F10324A28FB46CB0041BDDE /* BlueViewController.swift in Sources */,
 				0FC649D028FB2916001D64A0 /* SceneDelegate.swift in Sources */,

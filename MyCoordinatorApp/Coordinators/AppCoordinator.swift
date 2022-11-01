@@ -19,11 +19,13 @@ class AppCoordinator: Coordinator {
     
     func start() {
         guard let winScene = (scene as? UIWindowScene) else { return }
+        let viewController = UIViewController()
             window = UIWindow(windowScene: winScene)
-            window?.rootViewController = ViewController()
+            window?.rootViewController = viewController
             window?.makeKeyAndVisible()
         
-        //let startCoordinator = startCoordinator(navigationController: navigationController)
-        //coordinate(to: startCoordinator)
+        let startCoordinator = MainCoordinator(viewController: viewController)
+                coordinate(to: startCoordinator)
+        
     }
 }

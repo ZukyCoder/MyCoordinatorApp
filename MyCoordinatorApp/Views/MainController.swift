@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainController.swift
 //  MyCoordinatorApp
 //
 //  Created by Mario Heberthardt on 15/10/2022.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainController: UIViewController {
+    var coordinator: StartFlow?
     
     lazy var mainStackView:UIStackView = {
         let stack = UIStackView(arrangedSubviews: [basicButton1, basicButton2, basicButton3])

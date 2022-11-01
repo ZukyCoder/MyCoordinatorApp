@@ -103,10 +103,10 @@
 		0FC649CC28FB2916001D64A0 /* MyCoordinatorApp */ = {
 			isa = PBXGroup;
 			children = (
-				0F10324F28FB488D0041BDDE /* Coordinators */,
-				0F10324328FB45900041BDDE /* Protocols */,
 				0F10324228FB430C0041BDDE /* App */,
+				0F10324F28FB488D0041BDDE /* Coordinators */,
 				0F10324128FB42E80041BDDE /* Views */,
+				0F10324328FB45900041BDDE /* Protocols */,
 				0FC649D628FB2917001D64A0 /* Assets.xcassets */,
 				0FC649D828FB2917001D64A0 /* LaunchScreen.storyboard */,
 				0FC649DB28FB2917001D64A0 /* Info.plist */,

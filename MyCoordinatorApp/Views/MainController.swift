@@ -26,6 +26,7 @@ class MainController: UIViewController {
         button.setTitle("Go to Red ViewController", for: .normal)
         button.tintColor = .black
         button.tag = 1
+        button.addTarget(self, action: #selector(willShowRedViewController), for: .touchUpInside)
         return button
     }()
     
@@ -36,6 +37,7 @@ class MainController: UIViewController {
         button.setTitle("Go to Blue ViewController", for: .normal)
         button.tintColor = .black
         button.tag = 2
+        button.addTarget(self, action: #selector(willShowBlueViewController), for: .touchUpInside)
         return button
     }()
     
@@ -46,12 +48,25 @@ class MainController: UIViewController {
         button.setTitle("Go to Yellow ViewController", for: .normal)
         button.tintColor = .black
         button.tag = 3
+        button.addTarget(self, action: #selector(willShowYellowViewController), for: .touchUpInside)
         return button
     }()
+    
+    @objc func willShowRedViewController() {
+        coordinator?.goToRedViewController()
+    }
+    
+    @objc func willShowBlueViewController() {
+        coordinator?.goToBlueViewController()
+    }
 
+    @objc func willShowYellowViewController() {
+        coordinator?.goToYellowViewController()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGray
         setupView()
     }
 

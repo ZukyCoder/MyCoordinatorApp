@@ -8,6 +8,7 @@
 import UIKit
 
 class RedViewController: UIViewController {
+    var coordinator: StartFlow?
 
     lazy var mainStackView:UIStackView = {
         let stack = UIStackView(arrangedSubviews: [basicButton1, basicButton2, basicButton3])
@@ -25,6 +26,7 @@ class RedViewController: UIViewController {
         button.setTitle("Go to Main ViewController", for: .normal)
         button.tintColor = .black
         button.tag = 1
+        button.addTarget(self, action: #selector(willShowMainViewController), for: .touchUpInside)
         return button
     }()
     
@@ -35,6 +37,7 @@ class RedViewController: UIViewController {
         button.setTitle("Go to Blue ViewController", for: .normal)
         button.tintColor = .black
         button.tag = 2
+        button.addTarget(self, action: #selector(willShowBlueViewController), for: .touchUpInside)
         return button
     }()
     
@@ -45,12 +48,25 @@ class RedViewController: UIViewController {
         button.setTitle("Go to Yellow ViewController", for: .normal)
         button.tintColor = .black
         button.tag = 3
+        button.addTarget(self, action: #selector(willShowYellowViewController), for: .touchUpInside)
         return button
     }()
+    
+    @objc func willShowMainViewController() {
+        coordinator?.goToTabMaincontroller()
+    }
+    
+    @objc func willShowBlueViewController() {
+        coordinator?.goToBlueViewController()
+    }
+
+    @objc func willShowYellowViewController() {
+        coordinator?.goToYellowViewController()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemRed
         setupView()
     }
 

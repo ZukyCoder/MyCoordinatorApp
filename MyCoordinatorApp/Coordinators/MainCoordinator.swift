@@ -9,10 +9,14 @@ import Foundation
 import UIKit
 
 protocol StartFlow: AnyObject {
-    func coordinateToTabBar()
+    func goToTabMaincontroller()
+    func goToRedViewController()
+    func goToBlueViewController()
+    func goToYellowViewController()
 }
 
 class MainCoordinator: Coordinator, StartFlow {
+    
     let viewController: UIViewController
     
     init(viewController: UIViewController) {
@@ -26,7 +30,31 @@ class MainCoordinator: Coordinator, StartFlow {
     }
     
     // MARK: - Flow Methods
-    func coordinateToTabBar() {
-        
+    func goToTabMaincontroller() {
+        let mainController = MainController()
+        mainController.modalPresentationStyle = .fullScreen
+        mainController.coordinator = self
+        viewController.showDetailViewController(mainController, sender: nil)
+    }
+    
+    func goToRedViewController() {
+        let redController = RedViewController()
+        redController.modalPresentationStyle = .fullScreen
+        redController.coordinator = self
+        viewController.showDetailViewController(redController, sender: nil)
+    }
+    
+    func goToBlueViewController() {
+        let blueController = BlueViewController()
+        blueController.modalPresentationStyle = .fullScreen
+        blueController.coordinator = self
+        viewController.showDetailViewController(blueController, sender: nil)
+    }
+    
+    func goToYellowViewController() {
+        let yellowController = YellowViewController()
+        yellowController.modalPresentationStyle = .fullScreen
+        yellowController.coordinator = self
+        viewController.showDetailViewController(yellowController, sender: nil)
     }
 }

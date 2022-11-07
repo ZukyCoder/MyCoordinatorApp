@@ -17,44 +17,42 @@ protocol StartFlow: AnyObject {
 
 class MainCoordinator: Coordinator, StartFlow {
     
-    let viewController: UIViewController
+    let Controller: UINavigationController
     
-    init(viewController: UIViewController) {
-        self.viewController = viewController
+    init(controller: UINavigationController) {
+        self.Controller = controller
     }
     
     func start() {
         let mainController = MainController()
         mainController.coordinator = self
-        viewController.show(mainController, sender: nil)
+        mainController.modalPresentationStyle = .overFullScreen
+        Controller.present(mainController, animated: true)
     }
     
     // MARK: - Flow Methods
     func goToTabMaincontroller() {
-        let mainController = MainController()
-        mainController.modalPresentationStyle = .fullScreen
-        mainController.coordinator = self
-        viewController.showDetailViewController(mainController, sender: nil)
+        Controller.popToRootViewController(animated: true)
     }
     
     func goToRedViewController() {
         let redController = RedViewController()
         redController.modalPresentationStyle = .fullScreen
         redController.coordinator = self
-        viewController.showDetailViewController(redController, sender: nil)
+        Controller.showDetailViewController(redController, sender: nil)
     }
     
     func goToBlueViewController() {
         let blueController = BlueViewController()
         blueController.modalPresentationStyle = .fullScreen
         blueController.coordinator = self
-        viewController.showDetailViewController(blueController, sender: nil)
+        Controller.showDetailViewController(blueController, sender: nil)
     }
     
     func goToYellowViewController() {
         let yellowController = YellowViewController()
         yellowController.modalPresentationStyle = .fullScreen
         yellowController.coordinator = self
-        viewController.showDetailViewController(yellowController, sender: nil)
+        Controller.showDetailViewController(yellowController, sender: nil)
     }
 }

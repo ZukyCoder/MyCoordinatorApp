@@ -7,7 +7,7 @@
 
 import UIKit
 
-class YellowViewController: UIViewController {
+class YellowViewController: UINavigationController {
     var coordinator: StartFlow?
 
     lazy var mainStackView:UIStackView = {

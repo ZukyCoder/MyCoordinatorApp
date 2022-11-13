@@ -24,35 +24,39 @@ class MainCoordinator: Coordinator, StartFlow {
     }
     
     func start() {
-        let mainController = MainController()
-        mainController.coordinator = self
-        mainController.modalPresentationStyle = .overFullScreen
-        Controller.present(mainController, animated: true)
+        Controller.dismiss(animated: false) {
+            self.goToTabMaincontroller()
+        }
     }
     
     // MARK: - Flow Methods
     func goToTabMaincontroller() {
-        Controller.popToRootViewController(animated: true)
+        let vc = MainController()
+        vc.coordinator = self
+        Controller.setViewControllers([vc], animated: false)
     }
     
     func goToRedViewController() {
+        print("RED")
         let redController = RedViewController()
         redController.modalPresentationStyle = .fullScreen
         redController.coordinator = self
-        Controller.showDetailViewController(redController, sender: nil)
+        Controller.pushViewController(redController, animated: true)
     }
     
     func goToBlueViewController() {
+        print("BLUE")
         let blueController = BlueViewController()
         blueController.modalPresentationStyle = .fullScreen
         blueController.coordinator = self
-        Controller.showDetailViewController(blueController, sender: nil)
+        Controller.pushViewController(blueController, animated: true)
     }
     
     func goToYellowViewController() {
+        print("YELLOW")
         let yellowController = YellowViewController()
         yellowController.modalPresentationStyle = .fullScreen
         yellowController.coordinator = self
-        Controller.showDetailViewController(yellowController, sender: nil)
+        Controller.pushViewController(yellowController, animated: true)
     }
 }

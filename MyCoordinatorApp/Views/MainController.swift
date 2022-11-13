@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainController: UINavigationController {
+class MainController: UIViewController {
     var coordinator: StartFlow?
     
     lazy var mainStackView:UIStackView = {

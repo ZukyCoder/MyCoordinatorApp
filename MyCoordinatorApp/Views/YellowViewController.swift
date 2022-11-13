@@ -7,8 +7,14 @@
 
 import UIKit
 
-class YellowViewController: UIViewController {
+class YellowViewController: UIViewController, UINavigationBarDelegate {
     var coordinator: StartFlow?
+    
+    private let navigationBarView: UINavigationBar = {
+        let nav = UINavigationBar(frame: .zero)
+        nav.backgroundColor = .systemGray2
+        return nav
+    }()
 
     lazy var mainStackView:UIStackView = {
         let stack = UIStackView(arrangedSubviews: [basicButton1, basicButton2, basicButton3])
@@ -67,6 +73,9 @@ class YellowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemYellow
+        self.navigationBarView.delegate = self
+        setNavBar()
+        self.title = "YELLOW VIEW"
         setupView()
     }
 
@@ -79,4 +88,17 @@ class YellowViewController: UIViewController {
         mainStackView.heightAnchor.constraint(equalToConstant: 500).isActive = true
     }
 
+}
+
+extension YellowViewController {
+    func setNavBar() {
+        let navBar = navigationBarView
+        view.addSubview(navBar)
+
+        navBar.translatesAutoresizingMaskIntoConstraints = false
+        navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        navBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        navBar.heightAnchor.constraint(equalToConstant: 100).isActive = true
+    }
 }

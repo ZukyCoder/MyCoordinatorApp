@@ -7,8 +7,14 @@
 
 import UIKit
 
-class BlueViewController: UIViewController {
+class BlueViewController: UIViewController, UINavigationBarDelegate {
     var coordinator: StartFlow?
+    
+    private let navigationBarView: UINavigationBar = {
+        let nav = UINavigationBar(frame: .zero)
+        nav.backgroundColor = .systemGray2
+        return nav
+    }()
 
     lazy var mainStackView:UIStackView = {
         let stack = UIStackView(arrangedSubviews: [basicButton1, basicButton2, basicButton3])
@@ -66,6 +72,9 @@ class BlueViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationBarView.delegate = self
+        setNavBar()
+        self.title = "BLUE VIEW"
         view.backgroundColor = .systemBlue
         setupView()
     }
@@ -77,5 +86,18 @@ class BlueViewController: UIViewController {
         mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         mainStackView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+    }
+}
+
+extension BlueViewController {
+    func setNavBar() {
+        let navBar = navigationBarView
+        view.addSubview(navBar)
+
+        navBar.translatesAutoresizingMaskIntoConstraints = false
+        navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        navBar.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        navBar.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
 }

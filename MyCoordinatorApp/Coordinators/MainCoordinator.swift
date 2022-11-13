@@ -13,6 +13,7 @@ protocol StartFlow: AnyObject {
     func goToRedViewController()
     func goToBlueViewController()
     func goToYellowViewController()
+    func backToRoot()
 }
 
 class MainCoordinator: Coordinator, StartFlow {
@@ -37,26 +38,24 @@ class MainCoordinator: Coordinator, StartFlow {
     }
     
     func goToRedViewController() {
-        print("RED")
         let redController = RedViewController()
-        redController.modalPresentationStyle = .fullScreen
         redController.coordinator = self
         Controller.pushViewController(redController, animated: true)
     }
     
     func goToBlueViewController() {
-        print("BLUE")
         let blueController = BlueViewController()
-        blueController.modalPresentationStyle = .fullScreen
         blueController.coordinator = self
         Controller.pushViewController(blueController, animated: true)
     }
     
     func goToYellowViewController() {
-        print("YELLOW")
         let yellowController = YellowViewController()
-        yellowController.modalPresentationStyle = .fullScreen
         yellowController.coordinator = self
         Controller.pushViewController(yellowController, animated: true)
+    }
+    
+    func backToRoot() {
+        Controller.popToRootViewController(animated: true)
     }
 }

@@ -61,7 +61,7 @@ class YellowViewController: UIViewController {
     }
 
     @objc func willShowMainViewController() {
-        coordinator?.goToTabMaincontroller()
+        coordinator?.backToRoot()
     }
 
     override func viewDidLoad() {

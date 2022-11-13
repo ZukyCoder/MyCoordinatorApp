@@ -57,7 +57,7 @@ class BlueViewController: UIViewController {
     }
     
     @objc func willShowMainViewController() {
-        coordinator?.goToTabMaincontroller()
+        coordinator?.backToRoot()
     }
 
     @objc func willShowYellowViewController() {
